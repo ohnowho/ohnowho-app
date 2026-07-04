@@ -1,44 +1,46 @@
-# 用户流程 — OhNoWho
+# User Flow — ohnowho
 
-## 核心流程
-
-```mermaid
-flowchart TD
-    A[打开 App] --> B[全屏地图]
-    B --> C{已有点?}
-    C -->|有| D[地图显示 Pin]
-    C -->|无| E[空地图]
-    
-    B --> F[点 + 按钮]
-    F --> G[底部 Sheet: 新建笔记]
-    G --> H[输入文字 Markdown]
-    G --> I[添加图片/视频]
-    G --> J[自动获取当前位置]
-    G --> K[保存笔记]
-    K --> L[地图新增 Pin]
-    
-    D --> M[点击 Pin]
-    M --> N[弹出笔记摘要卡片]
-    N --> O[点击进入详情页]
-    
-    O --> P[查看完整笔记]
-    O --> Q[查看大图 / 播放视频]
-    O --> R[编辑笔记] --> G
-    O --> S[删除笔记] --> B
-    O --> T[移动位置] --> B
-    
-    B --> U[搜索框]
-    U --> V[输入关键词]
-    V --> W[匹配标题+正文+地址]
-    W --> X[仅显示匹配的 Pin]
-
-## 首次启动流程
+## Core Flow
 
 ```mermaid
 flowchart TD
-    A[首次打开] --> B[请求定位权限]
-    B --> C[允许/拒绝]
-    C --> D[显示地图]
-    C --> E[地图无定位]
-    D --> F[定位到用户位置]
-    E --> G[显示默认地图]
+    A[Open App] --> B[Fullscreen Map]
+    B --> C{Any pins?}
+    C -->|Yes| D[Display pins on map]
+    C -->|No| E[Empty map]
+
+    B --> F[Tap + Button]
+    F --> G[Bottom Sheet: New Note]
+    G --> H[Enter markdown text]
+    G --> I[Add images/video]
+    G --> J[Auto-fetch current location]
+    G --> K[Save note]
+    K --> L[New pin appears on map]
+
+    D --> M[Tap pin]
+    M --> N[Note summary card pops up]
+    N --> O[Tap into detail page]
+
+    O --> P[View full note]
+    O --> Q[View full-size image / play video]
+    O --> R[Edit note] --> G
+    O --> S[Delete note] --> B
+    O --> T[Move pin location] --> B
+
+    B --> U[Search bar]
+    U --> V[Enter keywords]
+    V --> W[Match title + body + address]
+    W --> X[Show only matching pins]
+```
+
+## First Launch Flow
+
+```mermaid
+flowchart TD
+    A[First launch] --> B[Request location permission]
+    B --> C[Allow / Deny]
+    C --> D[Show map with user location]
+    C --> E[Show map without location]
+    D --> F[Center on user position]
+    E --> G[Show default map view]
+```

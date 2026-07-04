@@ -1,35 +1,35 @@
-# OhNoWho — 产品需求文档 (PRD)
+# ohnowho — Product Requirements Document (PRD)
 
-## 一句话定位
-> 地图 + 富文档笔记的私人位置记忆助手。
+## One-Line Positioning
+> A map + rich-document note-taking app — your personal location memory assistant.
 
-## 目标用户
-- 个人用户
-- 需要快速记录位置相关信息的人
-- 旅行记录、探店笔记、停车记忆等场景
+## Target Users
+- Individual users
+- People who need to quickly record location-related information
+- Travel journaling, shop reviews, parking spot memory, etc.
 
-## 核心价值主张
-- 打开地图就能看到你在各个地方记录的内容
-- 记录形式丰富：文字（Markdown）+ 图片 + 视频
-- 无需手动关联位置 — 记录时自动绑定当前位置
+## Core Value Proposition
+- Open the map and see everything you've recorded at each location
+- Rich note formats: text (Markdown) + images + videos
+- No manual location linking — automatically binds the current location when recording
 
-## MVP 边界（V1.0）
-- ✅ 纯个人工具，无社交 / 分享
-- ✅ iOS 原生 App（Swift + SwiftUI）
-- ✅ 目标部署 iOS 26+
-- ✅ 本地存储为主（SwiftData）
-- ✅ 支持导入 / 导出（JSON + assets 打包 zip）
-- ✅ 保留原始时间戳
-- ❌ 语音功能（后续版本）
-- ❌ iCloud 同步（后续版本）
-- ❌ 地理围栏提醒（后续版本）
+## MVP Scope (V1.0)
+- ✅ Personal tool only, no social / sharing features
+- ✅ Native iOS app (Swift + SwiftUI)
+- ✅ Target deployment: iOS 26+
+- ✅ Local storage first (SwiftData)
+- ✅ Import / Export support (JSON + assets as zip)
+- ✅ Preserve original timestamps
+- ❌ Voice recording (future version)
+- ❌ iCloud sync (future version)
+- ❌ Geofence reminders (future version)
 
-## 数据所有权
-- 数据完全在用户本地
-- 导出格式是开放的 JSON + 媒体文件，用户随时可以自行处理
+## Data Ownership
+- All data stays on-device, fully under user control
+- Export format is open JSON + media files — users can process them anytime
 
-## 视觉风格
-- 简洁冷淡风，遵循 Apple HIG
-- 主题色：高级砖红 🧱
-- 浅色/深色跟随系统
-- SF Symbols 图标集
+## Visual Style
+- Clean, minimal aesthetic, following Apple HIG
+- Accent color: Brick Red 🧱
+- Light / Dark mode follows system setting
+- SF Symbols icon set

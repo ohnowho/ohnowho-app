@@ -1,17 +1,17 @@
-# 架构设计 — OhNoWho
+# Architecture — ohnowho
 
-## 技术栈
-| 层 | 技术 |
-|----|------|
-| 语言 | Swift |
-| UI 框架 | SwiftUI |
-| 数据持久化 | SwiftData |
-| 地图 | MapKit |
-| 定位 | CoreLocation |
-| Markdown 渲染 | MarkdownUI（第三方库） |
-| 媒体选择 | PHPicker（相册） / UIImagePickerController（相机） |
+## Tech Stack
+| Layer | Technology |
+|-------|-----------|
+| Language | Swift |
+| UI Framework | SwiftUI |
+| Persistence | SwiftData |
+| Map | MapKit |
+| Location | CoreLocation |
+| Markdown Rendering | MarkdownUI (third-party) |
+| Media Picker | PHPicker (library) / UIImagePickerController (camera) |
 
-## 架构模式：MVVM
+## Architecture Pattern: MVVM
 
 ```mermaid
 flowchart LR
@@ -46,7 +46,8 @@ flowchart LR
     DataService --> FileManager
 ```
 
-## 目录结构规划
+## Directory Structure
+
 ```
 ohnowho-app/
 ├── App/
@@ -61,7 +62,8 @@ ohnowho-app/
 │   │   └── NoteCardView.swift
 │   └── Common/
 │       ├── SearchBar.swift
-│       └── MediaViewer.swift
+│       ├── MediaViewer.swift
+│       └── LocationPickerView.swift
 ├── ViewModels/
 │   ├── MapViewModel.swift
 │   └── NoteViewModel.swift
@@ -72,7 +74,22 @@ ohnowho-app/
 │   ├── LocationService.swift
 │   ├── DataService.swift
 │   └── ExportService.swift
-└── Utils/
-    ├── Constants.swift
-    └── Extensions.swift
+├── Utils/
+│   ├── Constants.swift
+│   └── Extensions.swift
+└── Docs/
+    ├── PRD.md
+    ├── FeatureList.md
+    ├── UserFlow.md
+    ├── Architecture.md
+    ├── DataModel.md
+    ├── DesignGuidelines.md
+    └── DevelopmentPlan/
+        ├── README.md
+        ├── Phase-1-Data-Layer-Foundation.md
+        ├── Phase-2-Map-Home.md
+        ├── Phase-3-Create-Edit-Notes.md
+        ├── Phase-4-Note-Detail.md
+        ├── Phase-5-Search.md
+        └── Phase-6-Data-Import-Export.md
 ```

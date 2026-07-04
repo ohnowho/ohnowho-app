@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		2FCB15222FF9858E0000DC23 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2FCB14D12FF97FE30000DC23 /* MarkdownUI */; };
+		2FCB15232FF9858E0000DC23 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 2FCB14D32FF97FE30000DC23 /* ZIPFoundation */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		2FCB14AF2FF97FE20000DC23 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -65,6 +70,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FCB15232FF9858E0000DC23 /* ZIPFoundation in Frameworks */,
+				2FCB15222FF9858E0000DC23 /* MarkdownUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,11 +217,11 @@
 			);
 			mainGroup = 2FCB14942FF97FE10000DC23;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			packageReferences = (
-				2FCB14D02FF97FE30000DC23 /* XCRemoteSwiftPackageReference */,
-				2FCB14D22FF97FE30000DC23 /* XCRemoteSwiftPackageReference */,
+				2FCB14D02FF97FE30000DC23 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
+				2FCB14D22FF97FE30000DC23 /* XCRemoteSwiftPackageReference "ZIPFoundation" */,
 			);
+			preferredProjectObjectVersion = 77;
 			productRefGroup = 2FCB149E2FF97FE10000DC23 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -225,38 +232,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-			2FCB14D02FF97FE30000DC23 /* XCRemoteSwiftPackageReference */ = {
-				isa = XCRemoteSwiftPackageReference;
-				repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui";
-				requirement = {
-					kind = upToNextMajorVersion;
-					minimumVersion = 2.2.6;
-				};
-			};
-			2FCB14D22FF97FE30000DC23 /* XCRemoteSwiftPackageReference */ = {
-				isa = XCRemoteSwiftPackageReference;
-				repositoryURL = "https://github.com/weichsel/ZIPFoundation";
-				requirement = {
-					kind = upToNextMajorVersion;
-					minimumVersion = 0.9.19;
-				};
-			};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-			2FCB14D12FF97FE30000DC23 /* MarkdownUI */ = {
-				isa = XCSwiftPackageProductDependency;
-				package = 2FCB14D02FF97FE30000DC23 /* XCRemoteSwiftPackageReference */;
-				productName = MarkdownUI;
-			};
-			2FCB14D32FF97FE30000DC23 /* ZIPFoundation */ = {
-				isa = XCSwiftPackageProductDependency;
-				package = 2FCB14D22FF97FE30000DC23 /* XCRemoteSwiftPackageReference */;
-				productName = ZIPFoundation;
-			};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin PBXResourcesBuildPhase section */
 		2FCB149B2FF97FE10000DC23 /* Resources */ = {
@@ -668,6 +643,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2FCB14D02FF97FE30000DC23 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.6;
+			};
+		};
+		2FCB14D22FF97FE30000DC23 /* XCRemoteSwiftPackageReference "ZIPFoundation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/weichsel/ZIPFoundation";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.19;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2FCB14D12FF97FE30000DC23 /* MarkdownUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2FCB14D02FF97FE30000DC23 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
+			productName = MarkdownUI;
+		};
+		2FCB14D32FF97FE30000DC23 /* ZIPFoundation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2FCB14D22FF97FE30000DC23 /* XCRemoteSwiftPackageReference "ZIPFoundation" */;
+			productName = ZIPFoundation;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2FCB14952FF97FE10000DC23 /* Project object */;
 }

@@ -1,111 +1,111 @@
-# 分阶段开发计划 — OhNoWho V1.0
+# Development Plan — ohnowho V1.0
 
-> 本文档是开发计划的入口。每个阶段拆分为独立文件，方便逐阶段跟踪和开发。
+> This document is the entry point for the development plan. Each phase is broken into its own file for independent tracking and development.
 
 ---
 
-## 阶段一览
+## Phase Overview
 
 ```mermaid
 flowchart LR
-    P1[Phase 1<br/>数据层与基础] --> P2[Phase 2<br/>地图主页]
-    P2 --> P3[Phase 3<br/>新建/编辑笔记]
-    P3 --> P4[Phase 4<br/>笔记详情]
-    P2 --> P5[Phase 5<br/>搜索功能]
-    P6[Phase 6<br/>数据导入导出] -->|可选| FIN[V1.0 完成]
+    P1[Phase 1<br/>Data Layer] --> P2[Phase 2<br/>Map Home]
+    P2 --> P3[Phase 3<br/>Create/Edit Notes]
+    P3 --> P4[Phase 4<br/>Note Detail]
+    P2 --> P5[Phase 5<br/>Search]
+    P6[Phase 6<br/>Data Import/Export] -->|Optional| FIN[V1.0 Complete]
     P3 --> P6
     P4 --> P6
 ```
 
-| 阶段 | 名称 | 前置依赖 | 文件 |
-|------|------|---------|------|
-| Phase 1 | 数据层与基础架构 | 无 | [Phase-1-数据层与基础架构.md](./Phase-1-数据层与基础架构.md) |
-| Phase 2 | 地图主页 | Phase 1 | [Phase-2-地图主页.md](./Phase-2-地图主页.md) |
-| Phase 3 | 新建 / 编辑笔记 | Phase 1 | [Phase-3-新建-编辑笔记.md](./Phase-3-新建-编辑笔记.md) |
-| Phase 4 | 笔记详情页 | Phase 1, 3 | [Phase-4-笔记详情页.md](./Phase-4-笔记详情页.md) |
-| Phase 5 | 搜索功能 | Phase 2 | [Phase-5-搜索功能.md](./Phase-5-搜索功能.md) |
-| Phase 6 | 数据导入导出 | Phase 1, 3, 4 | [Phase-6-数据导入导出.md](./Phase-6-数据导入导出.md) |
+| Phase | Name | Dependencies | File |
+|-------|------|-------------|------|
+| Phase 1 | Data Layer & Foundation | None | [Phase-1-Data-Layer-Foundation.md](./Phase-1-Data-Layer-Foundation.md) |
+| Phase 2 | Map Home | Phase 1 | [Phase-2-Map-Home.md](./Phase-2-Map-Home.md) |
+| Phase 3 | Create / Edit Notes | Phase 1 | [Phase-3-Create-Edit-Notes.md](./Phase-3-Create-Edit-Notes.md) |
+| Phase 4 | Note Detail | Phase 1, 3 | [Phase-4-Note-Detail.md](./Phase-4-Note-Detail.md) |
+| Phase 5 | Search | Phase 2 | [Phase-5-Search.md](./Phase-5-Search.md) |
+| Phase 6 | Data Import / Export | Phase 1, 3, 4 | [Phase-6-Data-Import-Export.md](./Phase-6-Data-Import-Export.md) |
 
-## 开发顺序与依赖关系
+## Development Order & Dependencies
 
 ```mermaid
 flowchart TD
-    P1[Phase 1<br/>数据层] --> P2[Phase 2<br/>地图主页]
-    P1 --> P3[Phase 3<br/>新建/编辑]
-    P2 --> P4[Phase 4<br/>笔记详情]
+    P1[Phase 1<br/>Data Layer] --> P2[Phase 2<br/>Map Home]
+    P1 --> P3[Phase 3<br/>Create/Edit]
+    P2 --> P4[Phase 4<br/>Note Detail]
     P3 --> P4
-    P2 --> P5[Phase 5<br/>搜索]
-    P1 --> P6[Phase 6<br/>导入导出]
+    P2 --> P5[Phase 5<br/>Search]
+    P1 --> P6[Phase 6<br/>Import/Export]
     P3 --> P6
     P4 --> P6
 ```
 
-**推荐顺序**: Phase 1 → Phase 2 → Phase 3 → Phase 4 → Phase 5 → Phase 6
+**Recommended order**: Phase 1 → Phase 2 → Phase 3 → Phase 4 → Phase 5 → Phase 6
 
-Phase 5 和 Phase 6 可并行开发，但 Phase 6 依赖 Phase 3/4 的完整数据模型。
+Phase 5 and Phase 6 can be developed in parallel, but Phase 6 depends on Phase 3/4's finalized data model.
 
 ---
 
-## 全局开发约定
+## Global Development Conventions
 
-### Git 分支策略
-- 每个阶段在 `dev` 上创建子分支: `dev/phase-1`, `dev/phase-2`, ...
-- 完成一个阶段后合并到 `dev`
-- 全部完成后合并 `dev` → `main`
+### Git Branch Strategy
+- Each phase creates a sub-branch from `dev`: `phase-1`, `phase-2`, ...
+- After completing a phase, merge into `dev`
+- When all phases are done, merge `dev` → `main`
 
-### 代码规范
-- 所有 View 使用 `struct` 而非 `class`
-- ViewModel 使用 `@Observable`（iOS 17+）或 `ObservableObject`
-- 国际化：所有用户可见字符串使用 `String(localized:)` 包裹
-- 注释：仅对复杂逻辑写注释，简单属性/方法不注释
-- 文件头：保留 Xcode 生成的文件头，不修改
+### Code Style
+- All Views use `struct` not `class`
+- ViewModels use `@Observable` (iOS 17+) or `ObservableObject`
+- All user-facing strings wrapped in `String(localized:)` for future i18n
+- Comments only for complex logic, not for simple properties/methods
+- Keep Xcode-generated file headers as-is
 
-### 测试策略
-- 每个阶段完成后手动运行 App 验证
-- 单元测试覆盖: DataService 的 CRUD、ExportService 的 JSON 序列化
-- UI 测试: 暂不覆盖（时间有限）
+### Testing Strategy
+- Manually verify the app after each phase
+- Unit tests cover: DataService CRUD, ExportService JSON serialization
+- UI tests: not covered (time constraints)
 
-### 目录结构总览
+### Directory Structure Overview
 ```
 ohnowho-app/
 ├── App/
-│   ├── OhNoWhoApp.swift           # App 入口
-│   └── ContentView.swift          # 根视图，连接 MapView
+│   ├── ohnowhoApp.swift           # App entry point
+│   └── ContentView.swift          # Root view, connects MapView
 ├── Models/
-│   ├── Note.swift                 # 笔记数据模型
-│   └── MediaAsset.swift           # 媒体资源模型
+│   ├── Note.swift                 # Note data model
+│   └── MediaAsset.swift           # Media asset model
 ├── ViewModels/
-│   ├── MapViewModel.swift         # 地图视图模型
-│   └── NoteViewModel.swift        # 笔记视图模型
+│   ├── MapViewModel.swift         # Map view model
+│   └── NoteViewModel.swift        # Note view model
 ├── Views/
 │   ├── Map/
-│   │   └── MapView.swift          # 全屏地图
+│   │   └── MapView.swift          # Fullscreen map
 │   ├── Note/
-│   │   ├── NoteDetailView.swift   # 笔记详情
-│   │   ├── NoteEditView.swift     # 新建/编辑
-│   │   └── NoteCardView.swift     # Pin 卡片摘要
+│   │   ├── NoteDetailView.swift   # Note detail
+│   │   ├── NoteEditView.swift     # Create/Edit note
+│   │   └── NoteCardView.swift     # Pin summary card
 │   ├── Common/
-│   │   ├── SearchBar.swift        # 搜索框
-│   │   ├── MediaViewer.swift      # 媒体查看器
-│   │   └── LocationPickerView.swift # 位置选择器
+│   │   ├── SearchBar.swift        # Search bar
+│   │   ├── MediaViewer.swift      # Media viewer
+│   │   └── LocationPickerView.swift # Location picker
 │   └── Settings/
-│       └── SettingsView.swift     # 设置页
+│       └── SettingsView.swift     # Settings page
 ├── Services/
-│   ├── LocationService.swift      # 定位服务
-│   ├── DataService.swift          # 数据操作封装
-│   └── ExportService.swift        # 导入导出服务
+│   ├── LocationService.swift      # Location service
+│   ├── DataService.swift          # Data operations
+│   └── ExportService.swift        # Import/Export service
 ├── Utils/
-│   ├── Constants.swift            # 常量
-│   └── Extensions.swift           # 扩展方法
+│   ├── Constants.swift            # Constants
+│   └── Extensions.swift           # Extensions
 └── Docs/
-    ├── DevelopmentPlan/           # ← 本目录
+    ├── DevelopmentPlan/           # ← This directory
     │   ├── README.md
-    │   ├── Phase-1-数据层与基础架构.md
-    │   ├── Phase-2-地图主页.md
-    │   ├── Phase-3-新建-编辑笔记.md
-    │   ├── Phase-4-笔记详情页.md
-    │   ├── Phase-5-搜索功能.md
-    │   └── Phase-6-数据导入导出.md
+    │   ├── Phase-1-Data-Layer-Foundation.md
+    │   ├── Phase-2-Map-Home.md
+    │   ├── Phase-3-Create-Edit-Notes.md
+    │   ├── Phase-4-Note-Detail.md
+    │   ├── Phase-5-Search.md
+    │   └── Phase-6-Data-Import-Export.md
     ├── PRD.md
     ├── FeatureList.md
     ├── UserFlow.md
@@ -114,11 +114,11 @@ ohnowho-app/
     └── DesignGuidelines.md
 ```
 
-## 当前进度
+## Current Progress
 
-- [x] Phase 1 — 数据层与基础架构 ✅
-- [ ] Phase 2 — 地图主页
-- [ ] Phase 3 — 新建 / 编辑笔记
-- [ ] Phase 4 — 笔记详情页
-- [ ] Phase 5 — 搜索功能
-- [ ] Phase 6 — 数据导入导出
+- [x] Phase 1 — Data Layer & Foundation ✅
+- [ ] Phase 2 — Map Home (in progress)
+- [ ] Phase 3 — Create / Edit Notes
+- [ ] Phase 4 — Note Detail
+- [ ] Phase 5 — Search
+- [ ] Phase 6 — Data Import / Export

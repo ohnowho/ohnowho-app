@@ -1,42 +1,42 @@
-# 功能列表 — OhNoWho V1.0
+# Feature List — ohnowho V1.0
 
-## 第一层级：地图主页
-- [ ] 全屏地图展示（MapKit）
-- [ ] 启动时立即请求定位权限（使用期间）
-- [ ] 定位到用户当前位置
-- [ ] 显示已记录笔记的 Pin
-- [ ] 点击 Pin 查看笔记摘要（卡片弹窗）
-- [ ] 搜索框：搜索标题 + 正文 + 地址，地图上只显示匹配的 pin
-- [ ] 底部浮动「+」按钮：底部 Sheet 新建笔记
+## Tier 1: Map Home
+- [ ] Fullscreen map display (MapKit)
+- [ ] Request location permission on launch (when-in-use)
+- [ ] Locate to user's current position
+- [ ] Display pins for saved notes
+- [ ] Tap pin to view note summary (card popover)
+- [ ] Search bar: search title + body + address, only show matching pins on map
+- [ ] Bottom floating "+" button: bottom sheet to create new note
 
-## 第二层级：笔记详情（从 Pin 点击进入）
-- [ ] 完整笔记展示（Markdown 渲染）
-- [ ] 图片可点击查看大图
-- [ ] 视频可点击播放
-- [ ] 显示创建时间、更新时间、位置信息
+## Tier 2: Note Detail (enter from pin tap)
+- [ ] Full note display (Markdown rendering)
+- [ ] Images tappable to view full size
+- [ ] Videos tappable to play
+- [ ] Show creation time, update time, location info
 
-### 笔记详情页操作
-- [ ] 编辑笔记（修改文字、增删媒体）
-- [ ] 删除笔记
-- [ ] 移动 Pin 位置
+### Note Detail Actions
+- [ ] Edit note (modify text, add/remove media)
+- [ ] Delete note
+- [ ] Move pin location
 
-## 第三层级：新建 / 编辑笔记
-- [ ] Markdown 编辑器（第三方库渲染 + 自制工具栏）
-- [ ] 拍照 / 从相册选图片
-- [ ] 拍摄 / 从相册选视频
-- [ ] 自动绑定当前位置
-- [ ] 手动调整位置（在地图上拖动 Pin）
-- [ ] 自动记录创建时间（不可编辑）
+## Tier 3: Create / Edit Note
+- [ ] Markdown editor (third-party rendering + custom toolbar)
+- [ ] Take photo / pick from photo library
+- [ ] Record video / pick from photo library
+- [ ] Auto-bind current location
+- [ ] Manually adjust location (drag pin on map)
+- [ ] Auto-record creation time (read-only)
 
-## 第四层级：数据管理
-- [ ] 全量导出为 zip（JSON + assets）
-- [ ] 从 zip 导入
-- [ ] 保留原始创建/更新时间戳
+## Tier 4: Data Management
+- [ ] Full export as zip (JSON + assets)
+- [ ] Import from zip
+- [ ] Preserve original creation/update timestamps
 
-## 后续版本（V2.0+）
-- [ ] 语音录制 + 转文字
-- [ ] 地理围栏提醒
-- [ ] iCloud 同步
-- [ ] 标签 / 分类筛选
-- [ ] 原生分享
-- [ ] 导出单条笔记
+## Future Versions (V2.0+)
+- [ ] Voice recording + transcription
+- [ ] Geofence reminders
+- [ ] iCloud sync
+- [ ] Tags / category filtering
+- [ ] Native sharing
+- [ ] Export single note

@@ -1,32 +1,32 @@
-# 设计规范 — OhNoWho
+# Design Guidelines — ohnowho
 
-## 整体风格
-- 简洁冷淡风，符合 Apple HIG
-- 大量留白，文字为主
-- 支持浅色 / 深色模式（跟随系统）
-- SF Symbols 图标集
+## Overall Style
+- Clean, minimal aesthetic, following Apple HIG
+- Generous whitespace, text-first design
+- Light / Dark mode support (follows system setting)
+- SF Symbols icon set
 
-## 色彩
-| 用途 | 色值（待定） |
-|------|-------------|
-| 主题色（Accent） | `#B22222` 砖红 🧱 
-| 主题色（浅色模式强调） | `#8B1A1A` 深砖红 |
-| Pin 选中色 | `#CD5C5C` 浅砖红 |
-| 搜索框背景 | `.ultraThinMaterial` 毛玻璃 |
-| 背景 | System Background |
-| 文字 | Label Color |
-| 地图 Pin | 系统默认红色大头针 |
+## Colors
+| Use | Value |
+|-----|-------|
+| Accent Color | `#B22222` Brick Red 🧱 |
+| Accent (Light Mode Emphasis) | `#8B1A1A` Dark Brick Red |
+| Pin Selection | `#CD5C5C` Light Brick Red |
+| Search Bar Background | `.ultraThinMaterial` frosted glass |
+| Background | System Background |
+| Text | Label Color |
+| Map Pin | System default red pin |
 
-## 字体
-- SF Pro（系统默认字体）
+## Typography
+- SF Pro (system default font)
 
-## App 图标
-- 符号风格图标（如 ❓ ❗ 📍 等方向待定）
+## App Icon
+- Symbol-style icon (❓ ❗ 📍 direction TBD)
 
-## 地图
-- MapKit 标准地图样式
-- 笔记 Pin：系统默认红色大头针
+## Map
+- MapKit standard map style
+- Note pins: system default red pin
 
-## 交互细节
-- 删除笔记：不弹确认，直接删除，加 Toast 撤销
-- 搜索：输入即搜索，地图实时过滤
+## Interaction Details
+- Delete note: no confirmation dialog, directly delete with undo Toast
+- Search: search-as-you-type, real-time map filtering
