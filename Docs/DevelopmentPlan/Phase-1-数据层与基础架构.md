@@ -8,9 +8,9 @@
 ## 目录结构
 
 ```
-OhNoWho/                          # ← Xcode 项目源目录
+ohnowho-app/                      # ← Xcode 项目源目录
 ├── App/
-│   ├── OhNoWhoApp.swift            # [改] 重命名 + 重构
+│   ├── ohnowhoApp.swift            # [改] 重命名 + 重构
 │   └── ContentView.swift           # [改] 清空为占位，NavigationStack + MapView
 ├── Models/
 │   ├── Note.swift                  # [新] 笔记数据模型
@@ -38,12 +38,12 @@ OhNoWho/                          # ← Xcode 项目源目录
 
 **涉及文件**:
 - `Item.swift` — 删除
-- `ohnowho_appApp.swift` — 移动到 `App/OhNoWhoApp.swift`
+- `ohnowho_appApp.swift` — 移动到 `App/ohnowhoApp.swift`
 - `ContentView.swift` — 改为指向 `MapView` 的容器
 
 - [ ] 删除 `Item.swift`（Xcode 模板自带的数据模型）
 - [ ] 创建 `App/` 目录
-- [ ] 将 `ohnowho_appApp.swift` **移动到** `App/OhNoWhoApp.swift`
+- [ ] 将 `ohnowho_appApp.swift` **移动并重命名为** `App/ohnowhoApp.swift`
 - [ ] 修改 `ContentView.swift`，清空模板列表代码，改为 `NavigationStack + MapView`
 
 **ContentView 改造后**：
@@ -230,7 +230,7 @@ final class DataService {
 ```
 
 **注入方式说明**:
-在 `OhNoWhoApp.swift` 中创建 DataService 并传递给 ContentView：
+在 `ohnowhoApp.swift` 中创建 DataService 并传递给 ContentView：
 ```swift
 let dataService = DataService(context: sharedModelContainer.mainContext)
 ContentView().environment(dataService)
@@ -353,14 +353,14 @@ extension CLLocationCoordinate2D: @retroactive Equatable {
 
 ### Step 1.5 — 更新 App 入口
 
-**涉及文件**: `App/OhNoWhoApp.swift`
+**涉及文件**: `App/ohnowhoApp.swift`
 
 ```swift
 import SwiftUI
 import SwiftData
 
 @main
-struct OhNoWhoApp: App {
+struct ohnowhoApp: App {
     let sharedModelContainer: ModelContainer = {
         let schema = Schema([Note.self, MediaAsset.self])
         let config = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
@@ -431,7 +431,7 @@ struct MapView: View {
 
 ```xml
 <key>NSLocationWhenInUseUsageDescription</key>
-<string>OhNoWho 需要访问您的位置，以便在笔记中记录当前位置</string>
+<string>ohnowho 需要访问您的位置，以便在笔记中记录当前位置</string>
 ```
 
 > **为什么是 WhenInUse**：根据 PRD，App 仅在"使用期间"需要定位，不需要后台定位权限。
@@ -472,7 +472,7 @@ struct MapView: View {
 ```swift
 import Testing
 import SwiftData
-@testable import OhNoWho
+@testable import ohnowho_app
 
 struct DataServiceTests {
     @Test func testCreateAndFetchNote() async throws {
@@ -514,7 +514,7 @@ struct DataServiceTests {
 | 操作 | 文件路径 | 说明 |
 |------|---------|------|
 | 🗑️ 删除 | `Item.swift` | 模板数据模型 |
-| 🔄 移动+改 | `ohnowho_appApp.swift` → `App/OhNoWhoApp.swift` | 同时修改内容 |
+| 🔄 移动+改 | `ohnowho_appApp.swift` → `App/ohnowhoApp.swift` | 同时修改内容 |
 | ✏️ 修改 | `ContentView.swift` | 清空为 NavigationStack + MapView |
 | ✏️ 修改 | `Info.plist` | 添加 `NSLocationWhenInUseUsageDescription` |
 | ✏️ 修改 | `../ohnowho-appTests/ohnowho_appTests.swift` | 适配新模型 + 添加 CRUD 测试 |

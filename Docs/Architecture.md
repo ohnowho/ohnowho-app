@@ -48,9 +48,9 @@ flowchart LR
 
 ## 目录结构规划
 ```
-OhNoWho/
+ohnowho-app/
 ├── App/
-│   ├── OhNoWhoApp.swift
+│   ├── ohnowhoApp.swift
 │   └── ContentView.swift
 ├── Views/
 │   ├── Map/
