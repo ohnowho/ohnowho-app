@@ -125,6 +125,8 @@
 			);
 			name = "ohnowho-app";
 			packageProductDependencies = (
+				2FCB14D12FF97FE30000DC23 /* MarkdownUI */,
+				2FCB14D32FF97FE30000DC23 /* ZIPFoundation */,
 			);
 			productName = "ohnowho-app";
 			productReference = 2FCB149D2FF97FE10000DC23 /* ohnowho-app.app */;
@@ -209,6 +211,10 @@
 			mainGroup = 2FCB14942FF97FE10000DC23;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
+			packageReferences = (
+				2FCB14D02FF97FE30000DC23 /* XCRemoteSwiftPackageReference */,
+				2FCB14D22FF97FE30000DC23 /* XCRemoteSwiftPackageReference */,
+			);
 			productRefGroup = 2FCB149E2FF97FE10000DC23 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -219,6 +225,38 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+			2FCB14D02FF97FE30000DC23 /* XCRemoteSwiftPackageReference */ = {
+				isa = XCRemoteSwiftPackageReference;
+				repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui";
+				requirement = {
+					kind = upToNextMajorVersion;
+					minimumVersion = 2.2.6;
+				};
+			};
+			2FCB14D22FF97FE30000DC23 /* XCRemoteSwiftPackageReference */ = {
+				isa = XCRemoteSwiftPackageReference;
+				repositoryURL = "https://github.com/weichsel/ZIPFoundation";
+				requirement = {
+					kind = upToNextMajorVersion;
+					minimumVersion = 0.9.19;
+				};
+			};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+			2FCB14D12FF97FE30000DC23 /* MarkdownUI */ = {
+				isa = XCSwiftPackageProductDependency;
+				package = 2FCB14D02FF97FE30000DC23 /* XCRemoteSwiftPackageReference */;
+				productName = MarkdownUI;
+			};
+			2FCB14D32FF97FE30000DC23 /* ZIPFoundation */ = {
+				isa = XCSwiftPackageProductDependency;
+				package = 2FCB14D22FF97FE30000DC23 /* XCRemoteSwiftPackageReference */;
+				productName = ZIPFoundation;
+			};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin PBXResourcesBuildPhase section */
 		2FCB149B2FF97FE10000DC23 /* Resources */ = {
